@@ -1,4 +1,5 @@
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { WhatsappLogoIcon } from "@phosphor-icons/react/dist/ssr/WhatsappLogo";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 import { BrandMark } from "./BrandMark";
 import { bookingUrl } from "./content";
@@ -27,7 +28,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="site-container flex flex-col gap-3 border-t border-white/10 py-5 text-center text-[10px] text-slate-500 sm:flex-row sm:justify-between sm:text-left"><span>© 2026 DriveMate. All rights reserved.</span><span>Made with trust in Yogyakarta • Your Trusted Travel Companion.</span></div>
-      <a aria-label="Hubungi DriveMate via WhatsApp" href={bookingUrl()} target="_blank" rel="noreferrer" className="fixed bottom-5 left-5 z-[80] grid size-14 place-items-center rounded-2xl bg-[#16A34A] text-white shadow-[0_12px_30px_rgba(22,163,74,.28)] transition hover:-translate-y-1 hover:bg-[#15803D]"><MessageCircle className="size-7" fill="currentColor" /></a>
+      <a aria-label="Hubungi DriveMate via WhatsApp" href={bookingUrl()} target="_blank" rel="noreferrer" className="fixed bottom-5 right-5 z-[80] grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_12px_30px_rgba(22,163,74,.3)] ring-4 ring-white/80 transition hover:-translate-y-1 hover:scale-105 hover:bg-[#20BD5A]"><WhatsappLogoIcon className="size-8" weight="fill" /></a>
     </footer>
   );
 }
