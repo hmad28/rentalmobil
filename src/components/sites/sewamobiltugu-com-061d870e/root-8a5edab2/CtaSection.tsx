@@ -1,19 +1,27 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, Clock3, Headphones } from "lucide-react";
+
 import { assetRoot, bookingUrl } from "./content";
 
 export function CtaSection() {
   return (
-    <section className="bg-[#F8FAFC] py-12">
-      <div className="site-container relative min-h-[220px] overflow-hidden rounded-2xl bg-[#2563EB] px-7 py-10 text-white shadow-[0_24px_60px_rgba(37,99,235,0.20)] md:px-11 md:py-12">
-        <Image src={`${assetRoot}/cta-bg.webp`} alt="" fill loading="eager" sizes="1176px" className="object-cover opacity-35" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1D4ED8]/95 via-[#2563EB]/85 to-[#2563EB]/45" />
-        <div className="relative z-10 max-w-[720px] md:pr-36">
-          <h2 className="text-3xl font-bold leading-tight tracking-[-0.035em]">Pesan Kendaraan Sekarang</h2>
-          <p className="mt-3 text-[15px] leading-7 text-white/90 md:text-base">Kami hadir kapan pun Anda butuh kendaraan di Yogyakarta. Aman, cepat, dan tanpa ribet!</p>
-          <a href={bookingUrl()} target="_blank" rel="noreferrer" className="group mt-6 inline-flex h-12 items-center gap-3 rounded-xl bg-[#111827] px-6 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(15,23,42,0.24)] transition-all hover:-translate-y-0.5 hover:bg-[#0F172A] active:translate-y-0">Hubungi Kami <ArrowRight size={17} className="transition group-hover:translate-x-1" /></a>
+    <section className="bg-[#F8FAFC] pb-16">
+      <div className="site-container relative min-h-[310px] overflow-hidden rounded-2xl bg-[#0B4EDB] text-white shadow-[0_24px_60px_rgba(37,99,235,.2)]">
+        <Image src={`${assetRoot}/drivemate-cta.png`} alt="Armada mobil dan motor DriveMate" fill sizes="1176px" className="object-cover object-[64%_center]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,55,166,.98)_0%,rgba(11,78,219,.88)_44%,rgba(11,78,219,.1)_72%)]" />
+        <div className="relative z-10 max-w-[610px] px-7 py-11 sm:px-11 lg:px-14 lg:py-14">
+          <h2 className="text-3xl font-bold leading-tight tracking-[-0.04em] sm:text-[40px]">Siap Menjelajahi Jogja?</h2>
+          <p className="mt-4 max-w-[500px] text-sm leading-6 text-blue-100">Pesan kendaraan sekarang dan nikmati perjalanan yang aman, nyaman, dan berkesan bersama DriveMate.</p>
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[11px] text-blue-100">
+            <span className="flex items-center gap-2"><Check className="size-4" />Unit terawat</span>
+            <span className="flex items-center gap-2"><Clock3 className="size-4" />Layanan tepat waktu</span>
+            <span className="flex items-center gap-2"><Headphones className="size-4" />Support 24/7</span>
+          </div>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a href={bookingUrl()} target="_blank" rel="noreferrer" className="inline-flex h-12 items-center gap-2 rounded-lg bg-white px-6 text-sm font-semibold text-[#1D4ED8] transition hover:-translate-y-0.5 hover:bg-blue-50">Pesan Sekarang <ArrowRight className="size-4" /></a>
+            <a href="#armada" className="inline-flex h-12 items-center gap-2 px-3 text-sm font-semibold text-white">Lihat Pilihan <ArrowRight className="size-4" /></a>
+          </div>
         </div>
-        <Image src={`${assetRoot}/cta-ornament.webp`} alt="Ilustrasi perjalanan di Yogyakarta" width={829} height={523} loading="eager" className="absolute -bottom-14 -right-12 hidden w-[430px] object-contain md:block lg:-right-3" />
       </div>
     </section>
   );
