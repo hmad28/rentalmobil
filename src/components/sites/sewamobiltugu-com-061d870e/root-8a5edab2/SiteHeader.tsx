@@ -1,39 +1,59 @@
 "use client";
 
-import { ArrowRight, Headphones, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, ChevronDown, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import { BrandMark } from "./BrandMark";
 import { bookingUrl } from "./content";
 
 const links = [
-  ["Beranda", "#top"],
-  ["Armada", "#armada"],
-  ["Sewa Motor", "#rental-motor"],
-  ["Layanan", "#layanan"],
-  ["Tentang Kami", "#layanan"],
-  ["Kontak", "#kontak"],
+  ["Beranda", "#top", false],
+  ["Armada", "#armada", true],
+  ["Sewa Motor", "#rental-motor", false],
+  ["Layanan", "#layanan", true],
+  ["Tentang Kami", "#layanan", false],
+  ["Kontak", "#kontak", false],
 ] as const;
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateHeader = () => setIsScrolled(window.scrollY > 48);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100] border-b border-white/10 bg-[#071321]/88 text-white shadow-[0_8px_28px_rgba(0,0,0,.14)] backdrop-blur-xl">
-      <div className="site-container flex h-[82px] items-center justify-between gap-5">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-[100] text-white">
+      <div className={`pointer-events-auto h-[34px] border-b border-white/10 bg-[#030A13]/42 transition duration-300 ${isScrolled ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}`}>
+        <div className="site-container flex h-full items-center justify-between gap-4 text-[10px] font-medium text-slate-300">
+          <span className="hidden items-center gap-1.5 sm:flex"><MapPin className="size-3 text-[#60A5FA]" />Melayani perjalanan Anda di Yogyakarta</span>
+          <span className="sm:hidden">DriveMate Yogyakarta</span>
+          <div className="flex items-center gap-4 sm:gap-5">
+            <a href="tel:62811261209" className="flex items-center gap-1.5 transition hover:text-white"><Phone className="size-3 text-[#60A5FA]" />24/7 Support&nbsp; +62 811-261-209</a>
+            <a href="mailto:info@drivemate.co.id" className="hidden items-center gap-1.5 transition hover:text-white md:flex"><Mail className="size-3 text-[#60A5FA]" />info@drivemate.co.id</a>
+          </div>
+        </div>
+      </div>
+
+      <div className={`pointer-events-auto absolute inset-x-0 h-[78px] border-b transition-all duration-300 ${isScrolled ? "top-0 border-white/10 bg-[#071321]/92 shadow-[0_12px_34px_rgba(0,0,0,.2)] backdrop-blur-xl" : "top-[34px] border-transparent bg-transparent"}`}>
+        <div className="site-container flex h-full items-center justify-between gap-5">
         <a href="#top" aria-label="DriveMate - Beranda" onClick={() => setMenuOpen(false)}>
           <BrandMark inverse compact />
         </a>
 
         <nav className="hidden lg:block" aria-label="Navigasi utama">
           <ul className="flex items-center gap-6 xl:gap-7">
-            {links.map(([label, href], index) => (
+            {links.map(([label, href, hasMenu], index) => (
               <li key={label}>
                 <a
                   href={href}
-                  className={`text-[13px] font-semibold transition-colors hover:text-[#60A5FA] ${index === 0 ? "text-[#60A5FA]" : "text-slate-200"}`}
+                  className={`flex items-center gap-1 text-[12px] font-semibold transition-colors hover:text-[#60A5FA] ${index === 0 ? "text-[#60A5FA]" : "text-slate-100"}`}
                 >
-                  {label}
+                  {label}{hasMenu ? <ChevronDown className="size-3" strokeWidth={2} /> : null}
                 </a>
               </li>
             ))}
@@ -41,12 +61,11 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <a href="tel:62811261209" className="hidden items-center gap-2 text-[11px] text-slate-300 xl:flex"><span className="grid size-8 place-items-center rounded-lg bg-white/8 text-[#60A5FA]"><Headphones className="size-4" /></span><span><span className="block text-[9px] text-slate-500">24/7 Support</span>+62 811-261-209</span></a>
           <a
             href={bookingUrl()}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-12 items-center gap-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] px-5 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(37,99,235,.32)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(37,99,235,.38)]"
+            className="inline-flex h-11 items-center gap-2 rounded-[10px] bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] px-5 text-[12px] font-semibold text-white shadow-[0_12px_28px_rgba(37,99,235,.32)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(37,99,235,.38)]"
           >
             Pesan Sekarang <ArrowRight className="size-4" />
           </a>
@@ -62,10 +81,10 @@ export function SiteHeader() {
         >
           {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
-      </div>
+        </div>
 
       {menuOpen ? (
-        <nav id="mobile-navigation" aria-label="Navigasi seluler" className="border-t border-white/10 bg-[#081424] lg:hidden">
+        <nav id="mobile-navigation" aria-label="Navigasi seluler" className="absolute inset-x-0 top-full border-t border-white/10 bg-[#081424]/98 shadow-2xl backdrop-blur-xl lg:hidden">
           <ul className="site-container py-3">
             {links.map(([label, href]) => (
               <li key={label}>
@@ -77,6 +96,7 @@ export function SiteHeader() {
           </ul>
         </nav>
       ) : null}
+      </div>
     </header>
   );
 }

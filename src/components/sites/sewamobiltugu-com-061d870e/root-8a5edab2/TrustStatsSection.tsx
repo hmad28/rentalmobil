@@ -9,7 +9,7 @@ const stats = [
 
 export function TrustStatsSection() {
   return (
-    <section className="bg-[#F8FAFC] pb-10 pt-8 lg:pb-20 lg:pt-40">
+    <section className="bg-[#F8FAFC] pb-10 pt-5 lg:pb-20 lg:pt-7">
       <div className="site-container grid overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(110deg,#0B1728_0%,#111827_55%,#10274A_100%)] shadow-[0_20px_50px_rgba(15,23,42,.16)] sm:grid-cols-2 lg:grid-cols-4">
         {stats.map(({ value, label, icon: Icon }, index) => (
           <div key={label} className={`flex items-center gap-4 px-8 py-7 ${index > 0 ? "border-t border-white/15 sm:border-t-0 sm:border-l" : ""} ${index === 2 ? "sm:border-l-0 sm:border-t lg:border-l lg:border-t-0" : ""}`}>

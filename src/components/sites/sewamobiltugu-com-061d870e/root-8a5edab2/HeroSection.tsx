@@ -1,26 +1,33 @@
 import Image from "next/image";
-import { ArrowRight, CalendarDays, Check, Clock3, MapPin, Search } from "lucide-react";
+import { ArrowRight, CalendarDays, CarFront, Check, CircleDollarSign, Clock3, CreditCard, MapPin, RotateCcw, Search } from "lucide-react";
 
 import { assetRoot, bookingUrl } from "./content";
 
 const bookingFields = [
-  { label: "Lokasi Jemput", value: "Yogyakarta", icon: MapPin },
+  { label: "Lokasi Jemput", value: "Pilih lokasi jemput", icon: MapPin },
+  { label: "Lokasi Antar (Opsional)", value: "Pilih lokasi antar", icon: MapPin },
   { label: "Tanggal & Waktu", value: "Pilih jadwal", icon: CalendarDays },
   { label: "Durasi", value: "1 Hari", icon: Clock3 },
 ] as const;
 
+const bookingBenefits = [
+  { title: "Gratis pembatalan", note: "Hingga 12 jam sebelum", icon: RotateCcw },
+  { title: "Harga terbaik", note: "Tanpa biaya tersembunyi", icon: CircleDollarSign },
+  { title: "Armada terawat", note: "Bersih & siap jalan", icon: CarFront },
+  { title: "Pembayaran aman", note: "Transaksi 100% aman", icon: CreditCard },
+] as const;
+
 export function HeroSection() {
   return (
-    <section className="relative bg-[#071321] pt-[82px] text-white">
-      <div className="absolute inset-x-0 top-[82px] bottom-0 overflow-hidden">
+    <section className="relative bg-[#F8FAFC] text-white">
+      <div className="relative min-h-[790px] overflow-hidden rounded-b-[52px] bg-[#071321] sm:rounded-b-[68px] lg:min-h-[800px] lg:rounded-b-[92px]">
         <Image src={`${assetRoot}/drivemate-hero.png`} alt="Armada DriveMate di Tugu Yogyakarta" fill priority sizes="100vw" className="scale-[1.03] object-cover object-[64%_center]" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,11,22,.99)_0%,rgba(4,14,27,.93)_30%,rgba(5,15,28,.46)_54%,rgba(5,15,28,.06)_83%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,11,22,.99)_0%,rgba(4,14,27,.94)_31%,rgba(5,15,28,.48)_55%,rgba(5,15,28,.04)_84%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_18%,rgba(37,99,235,.18),transparent_26%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#071321] to-transparent" />
-      </div>
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#071321]/90 to-transparent" />
 
-      <div className="site-container relative z-10 flex min-h-[690px] items-center pb-44 pt-16 lg:min-h-[740px] lg:pb-36 lg:pt-20">
-        <div className="max-w-[680px]">
+        <div className="site-container relative z-10 flex min-h-[790px] items-start pb-[205px] pt-[152px] sm:pt-[166px] lg:min-h-[800px] lg:items-center lg:pb-[175px] lg:pt-[120px]">
+          <div className="max-w-[680px]">
           <p className="mb-5 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#60A5FA]"><MapPin className="size-4" /> Yogyakarta</p>
           <h1 className="max-w-[680px] text-[43px] font-bold leading-[1.06] tracking-[-0.05em] text-balance sm:text-[56px] lg:text-[60px]">
             Sewa Kendaraan di <span className="text-[#3B82F6]">Jogja,</span><br />Lebih Mudah &amp; Nyaman
@@ -37,16 +44,17 @@ export function HeroSection() {
             <div className="flex -space-x-2">{["RP", "DL", "AS", "NW"].map((initials) => <span key={initials} className="grid size-8 place-items-center rounded-full border-2 border-[#071321] bg-gradient-to-br from-[#DBEAFE] to-[#93C5FD] text-[8px] font-bold text-[#1D4ED8]">{initials}</span>)}</div>
             <p className="text-[11px] leading-4 text-slate-400"><strong className="block text-xs text-white">2.000+ pelanggan puas</strong>mempercayakan perjalanan mereka</p>
           </div>
+          </div>
         </div>
       </div>
 
-      <div className="site-container relative z-20 -mt-32 pb-5 lg:absolute lg:inset-x-0 lg:-bottom-28 lg:mt-0 lg:pb-0">
+      <div className="site-container relative z-20 -mt-[108px] pb-6 sm:-mt-[120px] lg:-mt-[126px] lg:pb-8">
         <div className="rounded-[24px] border border-white/70 bg-white/98 p-6 text-[#0F172A] shadow-[0_30px_80px_rgba(15,23,42,.24),inset_0_1px_0_rgba(255,255,255,1)] sm:p-8">
           <div className="mb-6">
             <h2 className="text-lg font-bold tracking-[-0.025em]">Mulai Perjalanan Anda</h2>
             <p className="mt-1 text-xs text-[#64748B]">Pilih jadwal dan lokasi untuk menemukan kendaraan yang tepat.</p>
           </div>
-          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-[1.15fr_1fr_.8fr_auto] lg:items-end">
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-[1fr_1fr_1.05fr_.72fr_auto] xl:items-end">
             {bookingFields.map(({ label, value, icon: Icon }) => (
               <label key={label} className="block text-[11px] font-medium text-[#64748B]">
                 {label}
@@ -55,8 +63,8 @@ export function HeroSection() {
             ))}
             <a href={bookingUrl()} target="_blank" rel="noreferrer" className="flex h-14 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] px-7 text-sm font-semibold text-white shadow-[0_14px_28px_rgba(37,99,235,.28)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_34px_rgba(37,99,235,.34)]"><Search className="size-4" />Cari Kendaraan</a>
           </div>
-          <div className="mt-6 grid gap-3 border-t border-[#E2E8F0] pt-5 text-[11px] text-[#64748B] sm:grid-cols-3">
-            {["Gratis pembatalan", "Harga tanpa biaya tersembunyi", "Armada bersih & terawat"].map((item) => <span key={item} className="flex items-center gap-2"><Check className="size-4 text-[#2563EB]" />{item}</span>)}
+          <div className="mt-6 grid gap-4 border-t border-[#E2E8F0] pt-5 sm:grid-cols-2 lg:grid-cols-4">
+            {bookingBenefits.map(({ title, note, icon: Icon }, index) => <div key={title} className={`flex items-center gap-3 lg:px-4 ${index === 0 ? "lg:pl-0" : "lg:border-l lg:border-[#E2E8F0]"}`}><span className="grid size-9 shrink-0 place-items-center rounded-full border border-[#DBEAFE] bg-[#EFF6FF] text-[#2563EB]"><Icon className="size-4" /></span><span><strong className="block text-[11px] font-semibold text-[#0F172A]">{title}</strong><span className="mt-0.5 block text-[10px] text-[#64748B]">{note}</span></span></div>)}
           </div>
         </div>
       </div>
