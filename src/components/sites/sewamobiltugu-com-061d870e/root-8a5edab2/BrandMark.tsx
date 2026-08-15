@@ -6,12 +6,12 @@ type BrandMarkProps = {
 export function BrandMark({ inverse = false, compact = false }: BrandMarkProps) {
   return (
     <span className="inline-flex items-center gap-3" aria-label="DriveMate">
-      <span className="grid size-10 place-items-center rounded-xl bg-[#2563EB] text-[15px] font-bold tracking-[-0.04em] text-white shadow-[0_8px_22px_rgba(37,99,235,0.28)]">
+      <span className="grid size-11 place-items-center rounded-xl bg-[#2563EB] text-[15px] font-bold tracking-[-0.04em] text-white shadow-[0_8px_22px_rgba(37,99,235,0.28)]">
         DM
       </span>
       <span className="flex flex-col leading-none">
         <span
-          className={`text-[22px] font-bold tracking-[-0.045em] ${
+          className={`text-[24px] font-bold tracking-[-0.045em] ${
             inverse ? "text-white" : "text-[#111827]"
           }`}
         >
