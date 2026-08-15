@@ -29,7 +29,7 @@ export function SiteHeader() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-[100] text-white">
       <div className={`pointer-events-auto h-[34px] border-b border-white/10 bg-[#030A13]/42 transition duration-300 ${isScrolled ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}`}>
-        <div className="site-container flex h-full items-center justify-between gap-4 text-[10px] font-medium text-slate-300">
+        <div className="site-container flex h-full items-center justify-between gap-4 text-[11px] font-medium text-slate-300 sm:text-xs">
           <span className="hidden items-center gap-1.5 sm:flex"><MapPin className="size-3 text-[#60A5FA]" />Melayani perjalanan Anda di Yogyakarta</span>
           <span className="sm:hidden">DriveMate Yogyakarta</span>
           <div className="flex items-center gap-4 sm:gap-5">
@@ -51,7 +51,7 @@ export function SiteHeader() {
               <li key={label}>
                 <a
                   href={href}
-                  className={`flex items-center gap-1 text-[12px] font-semibold transition-colors hover:text-[#60A5FA] ${index === 0 ? "text-[#60A5FA]" : "text-slate-100"}`}
+                  className={`flex items-center gap-1 text-[13px] font-semibold transition-colors hover:text-[#60A5FA] xl:text-sm ${index === 0 ? "text-[#60A5FA]" : "text-slate-100"}`}
                 >
                   {label}{hasMenu ? <ChevronDown className="size-3" strokeWidth={2} /> : null}
                 </a>
@@ -65,7 +65,7 @@ export function SiteHeader() {
             href={bookingUrl()}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-11 items-center gap-2 rounded-[10px] bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] px-5 text-[12px] font-semibold text-white shadow-[0_12px_28px_rgba(37,99,235,.32)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(37,99,235,.38)]"
+            className="inline-flex h-11 items-center gap-2 rounded-[10px] bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] px-5 text-[13px] font-semibold text-white shadow-[0_12px_28px_rgba(37,99,235,.32)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(37,99,235,.38)]"
           >
             Pesan Sekarang <ArrowRight className="size-4" />
           </a>
@@ -88,7 +88,7 @@ export function SiteHeader() {
           <ul className="site-container py-3">
             {links.map(([label, href]) => (
               <li key={label}>
-                <a href={href} onClick={() => setMenuOpen(false)} className="flex h-11 items-center text-sm font-semibold text-slate-200 hover:text-[#60A5FA]">
+                <a href={href} onClick={() => setMenuOpen(false)} className="flex h-12 items-center text-base font-semibold text-slate-200 hover:text-[#60A5FA]">
                   {label}
                 </a>
               </li>
