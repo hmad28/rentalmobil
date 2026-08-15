@@ -36,7 +36,7 @@ export const benefits: Benefit[] = [
 
 export function bookingUrl(unit?: string) {
   const message = unit
-    ? `Halo Sewa Mobil Tugu, saya ingin booking unit ${unit}. Bisa minta informasi lebih lanjut?`
-    : "Halo Sewa Mobil Tugu, saya bisa minta informasi lebih lanjut?";
+    ? `Halo DriveMate, saya ingin booking unit ${unit}. Bisa minta informasi lebih lanjut?`
+    : "Halo DriveMate, saya bisa minta informasi lebih lanjut?";
   return `${whatsappBase}?text=${encodeURIComponent(message)}`;
 }

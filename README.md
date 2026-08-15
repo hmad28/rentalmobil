@@ -1,8 +1,8 @@
 <div align="center">
 
-# Sewa Mobil Jogja
+# DriveMate
 
-Website katalog rental mobil dan motor di Yogyakarta dengan pemesanan langsung melalui WhatsApp.
+Your Trusted Travel Companion. Website katalog rental mobil dan motor di Yogyakarta dengan pemesanan langsung melalui WhatsApp.
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=flat-square&logo=nextdotjs)
 ![React](https://img.shields.io/badge/React-19-149ECA?style=flat-square&logo=react&logoColor=white)
@@ -11,13 +11,13 @@ Website katalog rental mobil dan motor di Yogyakarta dengan pemesanan langsung m
 
 </div>
 
-![Tampilan desktop Sewa Mobil Jogja](public/preview.png)
+![Tampilan desktop DriveMate](public/preview.png)
 
 ## Tentang proyek
 
-Sewa Mobil Jogja adalah landing page responsif untuk bisnis rental kendaraan. Pengunjung dapat melihat armada, membandingkan pilihan harga, membaca keunggulan layanan, dan membuka pesan WhatsApp yang sudah terisi sesuai kendaraan yang dipilih.
+DriveMate adalah landing page responsif untuk bisnis rental kendaraan. Pengunjung dapat melihat armada, membandingkan pilihan harga, membaca keunggulan layanan, dan membuka pesan WhatsApp yang sudah terisi sesuai kendaraan yang dipilih.
 
-Tampilan mengangkat identitas visual Yogyakarta melalui palet merah-putih, foto armada, Tugu Jogja, dan elemen perjalanan. Implementasi dibangun ulang menggunakan Next.js App Router dengan aset lokal agar cepat dan stabil.
+Tampilan mengangkat identitas visual modern mobility melalui kombinasi electric blue, deep charcoal, ruang putih yang lega, foto armada, Tugu Jogja, dan elemen perjalanan. Implementasi dibangun menggunakan Next.js App Router dengan aset lokal agar cepat dan stabil.
 
 ## Fitur
 

@@ -9,7 +9,7 @@ import { SiteHeader } from "@/components/sites/sewamobiltugu-com-061d870e/root-8
 
 export default function Home() {
   return (
-    <div id="top" className="min-h-screen bg-white text-[#171313]">
+    <div id="top" className="min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       <SiteHeader />
       <main>
         <HeroSection />

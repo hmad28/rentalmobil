@@ -1,23 +1,17 @@
 import type { Metadata } from "next";
-import { Laila, Lobster_Two } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
-const laila = Laila({
-  variable: "--font-laila",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const lobsterTwo = Lobster_Two({
-  variable: "--font-lobster-two",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Sewa Mobil Jogja | Sewa Mobil Tugu",
+  title: "DriveMate | Rental Mobil & Motor Jogja",
   description:
-    "Sewa mobil dan motor di Yogyakarta dengan armada terawat, harga transparan, dan layanan praktis.",
+    "DriveMate, partner perjalanan tepercaya untuk sewa mobil dan motor di Yogyakarta.",
 };
 
 export default function RootLayout({
@@ -26,10 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="id"
-      className={`${laila.variable} ${lobsterTwo.variable} h-full antialiased`}
-    >
+    <html lang="id" className={`${manrope.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

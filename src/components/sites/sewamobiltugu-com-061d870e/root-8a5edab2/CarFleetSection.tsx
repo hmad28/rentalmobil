@@ -21,32 +21,32 @@ function WhatsAppIcon() {
 export function CarFleetSection() {
   return (
     <section
-      className="bg-[linear-gradient(180deg,#fff_0%,#fff8f6_24%,#f6c9c7_66%,#b70f14_100%)] pb-24 pt-20"
+      className="bg-[linear-gradient(180deg,#F8FAFC_0%,#EFF6FF_52%,#DBEAFE_100%)] pb-24 pt-20"
       id="rental-mobil"
     >
       <div className="mx-auto w-full max-w-[1216px] px-5">
         <header className="mb-11 max-w-[780px] md:mb-12">
-          <p className="mb-4 text-[13px] font-bold uppercase tracking-[0.08em] text-[#bd1519]">
-            Sewa Mobil Tugu
+          <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#2563EB]">
+            DriveMate
           </p>
-          <h2 className="text-[32px] font-bold leading-[1.2] tracking-[-0.025em] text-[#b41116] sm:text-[36px] lg:text-[40px]">
+          <h2 className="text-[32px] font-bold leading-[1.15] tracking-[-0.035em] text-[#111827] sm:text-[36px] lg:text-[40px]">
             Sewa Mobil Terpercaya di Yogyakarta
           </h2>
-          <p className="mt-4 max-w-[720px] text-[16px] leading-[1.7] text-[#6f7277] sm:text-[17px]">
+          <p className="mt-4 max-w-[720px] text-[16px] leading-[1.7] text-[#64748B] sm:text-[17px]">
             Nikmati kenyamanan perjalanan bersama armada mobil terbaik dari
-            Sewa Mobil Tugu.
+            DriveMate.
           </p>
         </header>
 
         <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {cars.map((car) => (
             <article
-              className="group flex min-h-[472px] flex-col overflow-hidden rounded-lg bg-[#fffdfb] shadow-[0_8px_24px_rgba(70,0,0,0.08)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(90,0,0,0.14)]"
+              className="group flex min-h-[472px] flex-col overflow-hidden rounded-xl border border-[#E2E8F0] bg-white shadow-[0_8px_28px_rgba(30,64,175,0.07)] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#BFDBFE] hover:shadow-[0_20px_48px_rgba(30,64,175,0.13)]"
               key={car.name}
             >
               <Image
-                alt={`${car.name} - armada Sewa Mobil Tugu`}
-                className="h-auto w-full"
+                alt={`${car.name} - armada DriveMate`}
+                className="h-auto w-full hue-rotate-[212deg] saturate-[.92]"
                 height={980}
                 sizes="(min-width: 1024px) 276px, (min-width: 640px) calc(50vw - 38px), calc(100vw - 40px)"
                 src={car.image}
@@ -54,28 +54,28 @@ export function CarFleetSection() {
               />
 
               <div className="grid flex-1 grid-cols-2 items-center px-3 py-5 text-center sm:px-2 lg:px-3">
-                <div className="flex min-h-[72px] flex-col justify-center border-r border-[#eadfdd] px-1.5 sm:px-2">
-                  <span className="text-[13px] leading-5 text-[#77797d]">
+                <div className="flex min-h-[72px] flex-col justify-center border-r border-[#E2E8F0] px-1.5 sm:px-2">
+                  <span className="text-[13px] leading-5 text-[#64748B]">
                     Lepas Kunci
                   </span>
-                  <strong className="mt-1 text-[15px] font-bold leading-5 text-[#181818] lg:text-[15px] xl:text-[16px]">
+                  <strong className="mt-1 text-[15px] font-bold leading-5 text-[#0F172A] [font-variant-numeric:tabular-nums] lg:text-[15px] xl:text-[16px]">
                     {car.selfDrivePrice}
                   </strong>
                 </div>
                 <div className="flex min-h-[72px] flex-col justify-center px-1.5 sm:px-2">
-                  <span className="text-[13px] leading-5 text-[#77797d]">
+                  <span className="text-[13px] leading-5 text-[#64748B]">
                     All IN (Driver + BBM)
                   </span>
-                  <strong className="mt-1 text-[15px] font-bold leading-5 text-[#181818] lg:text-[15px] xl:text-[16px]">
+                  <strong className="mt-1 text-[15px] font-bold leading-5 text-[#0F172A] [font-variant-numeric:tabular-nums] lg:text-[15px] xl:text-[16px]">
                     {car.allInPrice}
                   </strong>
                 </div>
               </div>
 
-              <div className="border-t border-[#efe5e3] px-3.5 py-3.5">
+              <div className="border-t border-[#E2E8F0] px-3.5 py-3.5">
                 <a
                   aria-label={`Pesan ${car.name} melalui WhatsApp`}
-                  className="flex h-[42px] w-full items-center justify-center gap-2 rounded-md border border-[#d0161b] text-[15px] font-semibold text-[#c41419] transition-colors duration-200 hover:bg-[#c41419] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c41419]"
+                  className="flex h-[42px] w-full items-center justify-center gap-2 rounded-lg border border-[#2563EB] text-[14px] font-semibold text-[#2563EB] transition-all duration-200 hover:bg-[#2563EB] hover:text-white active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB]"
                   href={bookingUrl(car.name)}
                   rel="noopener noreferrer"
                   target="_blank"

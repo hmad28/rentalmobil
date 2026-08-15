@@ -8,11 +8,11 @@ import { assetRoot } from "./content";
 const slides = [
   {
     src: `${assetRoot}/hero-1.webp`,
-    alt: "Rekomendasi armada perjalanan dari Sewa Mobil Tugu",
+    alt: "Rekomendasi armada perjalanan dari DriveMate",
   },
   {
     src: `${assetRoot}/hero-2.webp`,
-    alt: "Pilihan layanan perjalanan dari Sewa Mobil Tugu",
+    alt: "Pilihan layanan perjalanan dari DriveMate",
   },
 ] as const;
 
@@ -66,7 +66,7 @@ export function HeroSection() {
       className="pt-[105px] md:pt-[115px]"
     >
       <div
-        className="relative aspect-[2698/1200] w-full overflow-hidden bg-neutral-100"
+        className="relative aspect-[2698/1200] w-full overflow-hidden bg-[#F8FAFC]"
         onPointerEnter={() => setIsPointerOver(true)}
         onPointerLeave={() => setIsPointerOver(false)}
       >
@@ -79,7 +79,7 @@ export function HeroSection() {
             loading="eager"
             sizes="100vw"
             aria-hidden={index !== activeSlide}
-            className={`object-cover transition-opacity duration-500 ease-in-out motion-reduce:transition-none ${
+            className={`object-cover hue-rotate-[212deg] saturate-[.92] transition-opacity duration-500 ease-in-out motion-reduce:transition-none ${
               index === activeSlide ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
           />

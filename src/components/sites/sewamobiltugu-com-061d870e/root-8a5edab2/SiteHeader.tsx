@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import {
   ArrowRight,
   Mail,
@@ -11,7 +10,8 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { assetRoot, bookingUrl } from "./content";
+import { BrandMark } from "./BrandMark";
+import { bookingUrl } from "./content";
 
 const navigationLinks = [
   { label: "Home", href: "#top" },
@@ -38,7 +38,7 @@ export function SiteHeader() {
 
   return (
     <header className="relative z-[99] h-0">
-      <div className="fixed inset-x-0 top-0 z-[98] h-[35px] bg-[#a91313] text-white lg:h-[45px]">
+      <div className="fixed inset-x-0 top-0 z-[98] h-[35px] bg-[#111827] text-white lg:h-[45px]">
         <div className="mx-auto flex h-full w-[calc(100%-40px)] max-w-[1176px] items-center justify-between gap-4 text-[12px] lg:text-[14px]">
           <a
             href="tel:+62811261209"
@@ -63,28 +63,21 @@ export function SiteHeader() {
           </div>
 
           <span className="truncate text-right text-[11px] sm:text-[12px] md:hidden">
-            Rental Mobil &amp; Motor Jogja
+            Your Trusted Travel Companion.
           </span>
         </div>
       </div>
 
       <div
-        className={`fixed inset-x-0 z-[99] h-[70px] bg-white transition-[top,box-shadow] duration-300 ${
+        className={`fixed inset-x-0 z-[99] h-[70px] border-b border-[#E2E8F0] bg-white/95 backdrop-blur-md transition-[top,box-shadow] duration-300 ${
           isScrolled
-            ? "top-0 shadow-[0_10px_35px_rgba(0,0,0,0.1)]"
+            ? "top-0 shadow-[0_12px_36px_rgba(15,23,42,0.09)]"
             : "top-[35px] shadow-none lg:top-[45px]"
         }`}
       >
         <div className="mx-auto flex h-[70px] w-[calc(100%-40px)] max-w-[1176px] items-center justify-between gap-5">
-          <a href="#top" aria-label="Sewa Mobil Tugu - Beranda" onClick={closeMenu}>
-            <Image
-              src={`${assetRoot}/logo-header.png`}
-              alt="Sewa Mobil Tugu"
-              width={440}
-              height={104}
-              priority
-              className="h-auto w-full max-w-[180px] object-contain lg:max-w-[220px]"
-            />
+          <a href="#top" aria-label="DriveMate - Beranda" onClick={closeMenu}>
+            <BrandMark />
           </a>
 
           <div className="hidden items-center gap-8 lg:flex">
@@ -94,8 +87,8 @@ export function SiteHeader() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className={`whitespace-nowrap text-[15px] font-medium transition-colors hover:text-[#a91313] ${
-                        index === 0 ? "text-[#a91313]" : "text-[#060405]"
+                      className={`whitespace-nowrap text-[14px] font-semibold transition-colors hover:text-[#2563EB] ${
+                        index === 0 ? "text-[#2563EB]" : "text-[#111827]"
                       }`}
                     >
                       {link.label}
@@ -109,7 +102,7 @@ export function SiteHeader() {
               href={bookingUrl()}
               target="_blank"
               rel="noreferrer"
-              className="group flex h-[46px] items-center gap-2.5 rounded-full bg-[#a91313] px-6 text-[15px] font-semibold text-white transition-colors hover:bg-[#7f0e0e]"
+              className="group flex h-[46px] items-center gap-2.5 rounded-xl bg-[#2563EB] px-6 text-[14px] font-semibold text-white shadow-[0_8px_20px_rgba(37,99,235,0.22)] transition-all hover:-translate-y-0.5 hover:bg-[#1D4ED8] active:translate-y-0"
             >
               Hubungi Kami
               <ArrowRight
@@ -125,7 +118,7 @@ export function SiteHeader() {
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((open) => !open)}
-            className="grid size-11 shrink-0 place-items-center rounded-full text-[#060405] transition-colors hover:bg-[#a91313]/10 hover:text-[#a91313] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a91313] lg:hidden"
+            className="grid size-11 shrink-0 place-items-center rounded-xl text-[#111827] transition-colors hover:bg-[#DBEAFE] hover:text-[#2563EB] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB] lg:hidden"
           >
             {isMenuOpen ? (
               <X aria-hidden="true" className="size-7" strokeWidth={1.8} />
@@ -139,7 +132,7 @@ export function SiteHeader() {
           <nav
             id="mobile-navigation"
             aria-label="Navigasi seluler"
-            className="absolute inset-x-0 top-full h-[230px] overflow-hidden border-t border-black/5 bg-white shadow-[0_16px_28px_rgba(0,0,0,0.08)] lg:hidden"
+            className="absolute inset-x-0 top-full h-[230px] overflow-hidden border-t border-[#E2E8F0] bg-white shadow-[0_18px_32px_rgba(15,23,42,0.09)] lg:hidden"
           >
             <ul className="mx-auto flex h-full w-[calc(100%-40px)] max-w-[1176px] flex-col py-[5px]">
               {navigationLinks.map((link, index) => (
@@ -147,8 +140,8 @@ export function SiteHeader() {
                   <a
                     href={link.href}
                     onClick={closeMenu}
-                    className={`flex h-11 items-center text-[16px] font-medium transition-colors hover:text-[#a91313] ${
-                      index === 0 ? "text-[#a91313]" : "text-[#060405]"
+                    className={`flex h-11 items-center text-[15px] font-semibold transition-colors hover:text-[#2563EB] ${
+                      index === 0 ? "text-[#2563EB]" : "text-[#111827]"
                     }`}
                   >
                     {link.label}
