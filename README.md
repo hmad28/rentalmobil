@@ -11,7 +11,7 @@ Website katalog rental mobil dan motor di Yogyakarta dengan pemesanan langsung m
 
 </div>
 
-![Tampilan desktop Sewa Mobil Jogja](docs/design-references/sewamobiltugu-com-061d870e/root-8a5edab2/clone-desktop-final.png)
+![Tampilan desktop Sewa Mobil Jogja](public/preview.png)
 
 ## Tentang proyek
 
@@ -41,7 +41,6 @@ Tampilan mengangkat identitas visual Yogyakarta melalui palet merah-putih, foto 
 | TypeScript | Type safety dengan mode strict |
 | Tailwind CSS 4 | Styling dan responsive layout |
 | Lucide React | Ikon antarmuka |
-| Playwright CLI | Pemeriksaan visual dan interaksi responsif |
 
 ## Menjalankan secara lokal
 
@@ -95,9 +94,7 @@ src/
     └── sewamobil.ts
 
 public/sites/             # Logo, foto kendaraan, dan aset visual
-docs/research/            # Hasil audit dan spesifikasi komponen
-docs/design-references/   # Screenshot desktop/mobile untuk visual QA
-scripts/                  # Script pengunduh aset sumber
+public/preview.png        # Pratinjau desktop untuk dokumentasi
 ```
 
 ## Mengganti informasi bisnis
