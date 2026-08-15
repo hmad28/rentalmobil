@@ -30,8 +30,8 @@ export function SiteHeader() {
     <header className="pointer-events-none fixed inset-x-0 top-0 z-[100] text-white">
       <div className={`pointer-events-auto h-[34px] border-b border-white/10 bg-[#030A13]/42 transition duration-300 ${isScrolled ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}`}>
         <div className="site-container flex h-full items-center justify-between gap-4 text-[11px] font-medium text-slate-300 sm:text-xs">
-          <span className="hidden items-center gap-1.5 sm:flex"><MapPin className="size-3 text-[#60A5FA]" />Melayani perjalanan Anda di Yogyakarta</span>
-          <span className="sm:hidden">DriveMate Yogyakarta</span>
+          <span className="hidden items-center gap-1.5 sm:flex"><MapPin className="size-3 text-[#60A5FA]" />Melayani perjalanan Anda di Bandung Raya</span>
+          <span className="sm:hidden">DriveMate Bandung</span>
           <div className="flex items-center gap-4 sm:gap-5">
             <a href="tel:62811261209" className="flex items-center gap-1.5 transition hover:text-white"><Phone className="size-3 text-[#60A5FA]" />24/7 Support&nbsp; +62 811-261-209</a>
             <a href="mailto:info@drivemate.co.id" className="hidden items-center gap-1.5 transition hover:text-white md:flex"><Mail className="size-3 text-[#60A5FA]" />info@drivemate.co.id</a>
@@ -51,7 +51,7 @@ export function SiteHeader() {
               <li key={label}>
                 <a
                   href={href}
-                  className={`flex items-center gap-1 text-[13px] font-semibold transition-colors hover:text-[#60A5FA] xl:text-sm ${index === 0 ? "text-[#60A5FA]" : "text-slate-100"}`}
+                  className={`relative flex items-center gap-1 py-2 text-[13px] font-semibold transition-colors after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-[#3B82F6] after:transition-transform after:duration-300 hover:text-[#60A5FA] hover:after:scale-x-100 xl:text-sm ${index === 0 ? "text-[#60A5FA]" : "text-slate-100"}`}
                 >
                   {label}{hasMenu ? <ChevronDown className="size-3" strokeWidth={2} /> : null}
                 </a>

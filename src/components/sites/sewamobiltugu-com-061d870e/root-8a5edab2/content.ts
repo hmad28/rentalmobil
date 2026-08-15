@@ -31,12 +31,12 @@ export const benefits: Benefit[] = [
   { title: "Armada Bersih & Terawat", description: "Setiap mobil selalu dalam kondisi prima & rutin diservis, nyaman dan aman.", image: `${assetRoot}/benefit-clean.webp` },
   { title: "Praktis & Cepat", description: "Cukup pesan lewat WhatsApp atau website, mobil langsung kami antar ke lokasi Anda.", image: `${assetRoot}/benefit-fast.webp` },
   { title: "Harga Terjangkau", description: "Nikmati tarif sewa mobil yang bersahabat tanpa biaya tambahan tersembunyi.", image: `${assetRoot}/benefit-price.webp` },
-  { title: "Sopir Profesional", description: "Tersedia layanan dengan sopir berpengalaman yang hafal jalanan Jogja.", image: `${assetRoot}/benefit-driver.webp` },
+  { title: "Sopir Profesional", description: "Tersedia layanan dengan sopir berpengalaman yang hafal jalanan Bandung.", image: `${assetRoot}/benefit-driver.webp` },
 ];
 
 export function bookingUrl(unit?: string) {
   const message = unit
-    ? `Halo DriveMate, saya ingin booking unit ${unit}. Bisa minta informasi lebih lanjut?`
-    : "Halo DriveMate, saya bisa minta informasi lebih lanjut?";
+    ? `Halo DriveMate Bandung, saya ingin booking unit ${unit}. Bisa minta informasi lebih lanjut?`
+    : "Halo DriveMate Bandung, saya ingin meminta informasi rental kendaraan lebih lanjut.";
   return `${whatsappBase}?text=${encodeURIComponent(message)}`;
 }

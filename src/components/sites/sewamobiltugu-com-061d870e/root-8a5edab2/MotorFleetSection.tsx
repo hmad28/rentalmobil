@@ -28,10 +28,10 @@ export function MotorFleetSection() {
               Armada motor DriveMate
             </p>
             <h2 className="text-[32px] font-bold leading-[1.15] tracking-[-0.04em] text-[#111827] sm:text-[36px] lg:text-[40px]">
-              Sewa Motor Praktis untuk Keliling Jogja
+              Sewa Motor Praktis untuk Keliling Bandung
             </h2>
             <p className="mt-4 max-w-[650px] text-sm leading-6 text-[#64748B]">
-              Butuh transportasi cepat dan hemat di Yogyakarta? Pilih layanan
+              Butuh transportasi cepat dan hemat di Bandung? Pilih layanan
               rental motor kami! Dengan motor terbaru, bahan bakar irit, dan
               harga bersahabat.
             </p>

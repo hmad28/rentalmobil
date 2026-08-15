@@ -17,9 +17,9 @@ const bodyFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DriveMate | Rental Mobil & Motor Jogja",
+  title: "DriveMate | Rental Mobil & Motor Bandung",
   description:
-    "DriveMate, partner perjalanan tepercaya untuk sewa mobil dan motor di Yogyakarta.",
+    "DriveMate, partner perjalanan tepercaya untuk sewa mobil dan motor di Bandung.",
 };
 
 export default function RootLayout({

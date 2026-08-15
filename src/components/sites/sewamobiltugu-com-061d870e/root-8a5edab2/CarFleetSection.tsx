@@ -12,7 +12,7 @@ export function CarFleetSection() {
           <div className="max-w-[650px]">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#2563EB]">Armada terbaik kami</p>
             <h2 className="mt-3 text-3xl font-bold leading-tight tracking-[-0.04em] text-[#111827] sm:text-[40px]">Pilih Kendaraan<br />Sesuai Kebutuhan Anda</h2>
-            <p className="mt-4 max-w-[560px] text-sm leading-6 text-[#64748B]">Beragam pilihan mobil dan motor terawat untuk perjalanan bisnis, liburan, atau kebutuhan harian di Yogyakarta.</p>
+            <p className="mt-4 max-w-[560px] text-sm leading-6 text-[#64748B]">Beragam pilihan mobil dan motor terawat untuk perjalanan bisnis, liburan, atau kebutuhan harian di Bandung.</p>
           </div>
           <a href={bookingUrl()} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] hover:text-[#1D4ED8]">Lihat semua armada <ArrowRight className="size-4" /></a>
         </div>
