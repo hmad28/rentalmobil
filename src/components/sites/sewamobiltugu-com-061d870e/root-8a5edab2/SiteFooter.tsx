@@ -2,12 +2,13 @@ import { FacebookLogoIcon } from "@phosphor-icons/react/dist/ssr/FacebookLogo";
 import { InstagramLogoIcon } from "@phosphor-icons/react/dist/ssr/InstagramLogo";
 import { WhatsappLogoIcon } from "@phosphor-icons/react/dist/ssr/WhatsappLogo";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
 
 import { BrandMark } from "./BrandMark";
 import { bookingUrl } from "./content";
 
-const companyLinks = [["Tentang Kami", "#layanan"], ["Cara Sewa", "#layanan"], ["Armada", "#armada"], ["Kontak", "#kontak"]] as const;
-const serviceLinks = [["Sewa Mobil", "#armada"], ["Sewa Motor", "#rental-motor"], ["Dengan Driver", "#armada"], ["Antar-Jemput", "#kontak"]] as const;
+const companyLinks = [["Tentang Kami", "/#tentang-kami"], ["Cara Sewa", "/#layanan"], ["Armada", "/armada"], ["Kontak", "/#kontak"]] as const;
+const serviceLinks = [["Sewa Mobil", "/armada"], ["Sewa Motor", "/rental-motor"], ["Dengan Driver", "/armada"], ["Antar-Jemput", "/#kontak"]] as const;
 
 export function SiteFooter() {
   return (
@@ -22,8 +23,8 @@ export function SiteFooter() {
             <a aria-label="WhatsApp DriveMate" title="WhatsApp" href={bookingUrl()} target="_blank" rel="noreferrer" className="grid size-10 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-[#25D366]/50 hover:bg-white/[0.07] hover:text-[#25D366]"><WhatsappLogoIcon className="size-5" weight="fill" /></a>
           </div>
         </div>
-        <nav aria-label="Perusahaan"><h2 className="text-base font-bold">Perusahaan</h2><ul className="mt-5 space-y-3">{companyLinks.map(([label, href]) => <li key={label}><a href={href} className="text-[13px] text-slate-400 transition hover:text-[#60A5FA]">{label}</a></li>)}</ul></nav>
-        <nav aria-label="Layanan"><h2 className="text-base font-bold">Layanan</h2><ul className="mt-5 space-y-3">{serviceLinks.map(([label, href]) => <li key={label}><a href={href} className="text-[13px] text-slate-400 transition hover:text-[#60A5FA]">{label}</a></li>)}</ul></nav>
+        <nav aria-label="Perusahaan"><h2 className="text-base font-bold">Perusahaan</h2><ul className="mt-5 space-y-3">{companyLinks.map(([label, href]) => <li key={label}><Link href={href} className="text-[13px] text-slate-400 transition hover:text-[#60A5FA]">{label}</Link></li>)}</ul></nav>
+        <nav aria-label="Layanan"><h2 className="text-base font-bold">Layanan</h2><ul className="mt-5 space-y-3">{serviceLinks.map(([label, href]) => <li key={label}><Link href={href} className="text-[13px] text-slate-400 transition hover:text-[#60A5FA]">{label}</Link></li>)}</ul></nav>
         <div>
           <h2 className="text-base font-bold">Kontak Kami</h2>
           <div className="mt-5 space-y-3.5 text-[13px] leading-6 text-slate-400">

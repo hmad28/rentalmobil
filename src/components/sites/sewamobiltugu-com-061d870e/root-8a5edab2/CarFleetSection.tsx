@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, BriefcaseBusiness, Gauge, Heart, MapPinned, MessageCircle, Plane, Snowflake, Star, UsersRound } from "lucide-react";
 
 import { assetRoot, bookingUrl, cars } from "./content";
@@ -25,12 +26,12 @@ export function CarFleetSection() {
             <h2 className="mt-3 text-3xl font-bold leading-tight tracking-[-0.04em] text-[#111827] sm:text-[40px]">Pilih Kendaraan<br />Sesuai Kebutuhan Anda</h2>
             <p className="mt-4 max-w-[560px] text-sm leading-6 text-[#64748B]">Beragam pilihan mobil dan motor terawat untuk perjalanan bisnis, liburan, atau kebutuhan harian di Bandung.</p>
           </div>
-          <a href={bookingUrl()} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] hover:text-[#1D4ED8]">Lihat semua armada <ArrowRight className="size-4" /></a>
+          <Link href="/armada" className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] hover:text-[#1D4ED8]">Lihat semua armada <ArrowRight className="size-4" /></Link>
         </div>
 
         <div className="mt-8 flex gap-2 border-b border-[#E2E8F0]">
           <span className="border-b-2 border-[#2563EB] px-5 py-3 text-sm font-semibold text-[#2563EB]">Mobil</span>
-          <a href="#rental-motor" className="px-5 py-3 text-sm font-semibold text-[#64748B] transition hover:text-[#111827]">Motor</a>
+          <Link href="/rental-motor" className="px-5 py-3 text-sm font-semibold text-[#64748B] transition hover:text-[#111827]">Motor</Link>
         </div>
 
         <div className="mt-6 grid gap-y-4 border-y border-[#D9E4F2] py-4 sm:grid-cols-2 lg:grid-cols-4">

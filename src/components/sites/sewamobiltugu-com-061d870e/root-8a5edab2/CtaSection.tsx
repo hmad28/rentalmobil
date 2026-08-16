@@ -1,5 +1,6 @@
 import { WhatsappLogoIcon } from "@phosphor-icons/react/dist/ssr/WhatsappLogo";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, CarFront, Check, Clock3, Headphones } from "lucide-react";
 
 import { assetRoot, bookingUrl } from "./content";
@@ -22,7 +23,7 @@ export function CtaSection() {
           </div>
           <div className="mt-7 flex flex-wrap gap-3">
             <a href={bookingUrl()} target="_blank" rel="noreferrer" className="inline-flex h-12 items-center gap-2 rounded-xl bg-[#16A34A] px-5 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(22,163,74,.28)] transition hover:-translate-y-0.5 hover:bg-[#15803D]"><WhatsappLogoIcon className="size-5" weight="fill" />Booking via WhatsApp</a>
-            <a href="#armada" className="inline-flex h-12 items-center gap-2 rounded-xl border border-white/25 bg-white/8 px-5 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/15"><CarFront className="size-4" />Lihat Armada <ArrowRight className="size-4" /></a>
+            <Link href="/armada" className="inline-flex h-12 items-center gap-2 rounded-xl border border-white/25 bg-white/8 px-5 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/15"><CarFront className="size-4" />Lihat Armada <ArrowRight className="size-4" /></Link>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ export function AboutSection() {
             <p>Nikmati kemudahan berkeliling Bandung bersama <strong className="font-semibold text-[#0F172A]">DriveMate</strong>, solusi transportasi terbaik untuk liburan, perjalanan bisnis, atau keperluan keluarga. Tersedia berbagai pilihan mobil terbaru — dari city car hingga kendaraan keluarga luas dan nyaman.</p>
             <p>Dengan layanan <strong className="font-semibold text-[#0F172A]">antar-jemput mobil langsung ke lokasi Anda</strong>, proses sewa jadi cepat dan praktis. Harga bersahabat, armada bersih dan terawat, serta sopir berpengalaman siap menemani perjalanan Anda ke Braga, Gedung Sate, Dago, Lembang, hingga berbagai destinasi di Bandung Raya.</p>
           </div>
-          <a href="#kontak" className="mt-7 inline-flex h-12 items-center gap-3 rounded-xl bg-[#2563EB] px-6 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(37,99,235,0.22)] transition hover:-translate-y-0.5 hover:bg-[#1D4ED8] active:translate-y-0">Tentang Kami <span className="grid size-7 place-items-center rounded-lg bg-white text-[#2563EB]"><ArrowRight size={15} /></span></a>
+          <a href="#kontak" className="mt-7 inline-flex h-12 items-center gap-3 rounded-xl bg-[#2563EB] px-6 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(37,99,235,0.22)] transition hover:-translate-y-0.5 hover:bg-[#1D4ED8] active:translate-y-0">Hubungi DriveMate <span className="grid size-7 place-items-center rounded-lg bg-white text-[#2563EB]"><ArrowRight size={15} /></span></a>
         </div>
       </div>
     </section>

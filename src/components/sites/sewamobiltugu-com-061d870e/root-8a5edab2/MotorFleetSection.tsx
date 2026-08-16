@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Fuel, Gauge, MapPin, MessageCircle, Star } from "lucide-react";
 
 import { assetRoot, bookingUrl, motorcycles } from "./content";
@@ -40,10 +41,8 @@ export function MotorFleetSection() {
             </p>
           </div>
 
-          <a
-            href={bookingUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/rental-motor"
             className="group inline-flex h-11 w-fit shrink-0 items-center gap-2 rounded-lg border border-[#60A5FA]/60 bg-[#2563EB]/15 px-5 text-[14px] font-semibold text-white backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2563EB] active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#60A5FA]"
           >
             Lihat Unit Lainnya
@@ -51,7 +50,7 @@ export function MotorFleetSection() {
               aria-hidden="true"
               className="size-4 transition-transform group-hover:translate-x-0.5"
             />
-          </a>
+          </Link>
         </header>
 
         <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-6 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 lg:gap-6">
