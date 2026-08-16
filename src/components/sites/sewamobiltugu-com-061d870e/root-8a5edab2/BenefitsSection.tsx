@@ -7,8 +7,9 @@ import { SparkleIcon } from "@phosphor-icons/react/dist/ssr/Sparkle";
 import { SteeringWheelIcon } from "@phosphor-icons/react/dist/ssr/SteeringWheel";
 import { TagIcon } from "@phosphor-icons/react/dist/ssr/Tag";
 import { TimerIcon } from "@phosphor-icons/react/dist/ssr/Timer";
+import Image from "next/image";
 
-import { benefits } from "./content";
+import { assetRoot, benefits } from "./content";
 
 const benefitIcons = [CarIcon, TimerIcon, TagIcon, SteeringWheelIcon] as const;
 const steps = [
@@ -19,8 +20,10 @@ const steps = [
 
 export function BenefitsSection() {
   return (
-    <section id="layanan" className="relative scroll-mt-20 overflow-hidden bg-[linear-gradient(180deg,#F8FAFC_0%,#FFFFFF_38%,#FFFFFF_100%)] py-16 lg:py-20">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_22%,rgba(37,99,235,.045),transparent_20%),radial-gradient(circle_at_92%_76%,rgba(37,99,235,.035),transparent_20%)]" />
+    <section id="layanan" className="relative scroll-mt-20 overflow-hidden bg-[linear-gradient(180deg,#EEF5FF_0%,#F8FAFC_48%,#FFFFFF_100%)] py-16 lg:py-20">
+      <Image src={`${assetRoot}/bandung-gedung-sate.jpg`} alt="" fill sizes="100vw" className="pointer-events-none object-cover object-center opacity-[0.14] mix-blend-multiply" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(238,245,255,.36),rgba(248,250,252,.82)_45%,rgba(255,255,255,.97)),radial-gradient(circle_at_8%_22%,rgba(37,99,235,.1),transparent_22%),radial-gradient(circle_at_92%_76%,rgba(37,99,235,.06),transparent_20%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-10 h-44 opacity-40 [background-image:radial-gradient(circle,#60A5FA_1.2px,transparent_1.2px)] [background-size:24px_24px] [mask-image:linear-gradient(90deg,black,transparent_32%,transparent_68%,black)]" />
       <div className="site-container relative">
         <header className="mx-auto max-w-[680px] text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#2563EB]">Kenapa memilih DriveMate?</p>
@@ -32,7 +35,7 @@ export function BenefitsSection() {
           {benefits.map((benefit, index) => {
             const Icon = benefitIcons[index];
             return (
-              <article key={benefit.title} className="group flex min-h-[238px] flex-col items-center rounded-[18px] border border-[#E8EDF4] bg-white px-5 py-6 text-center shadow-[0_14px_38px_rgba(15,23,42,.055)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_50px_rgba(15,23,42,.09)]">
+              <article key={benefit.title} className="group flex min-h-[224px] flex-col items-center rounded-[18px] border border-white/80 bg-white/88 px-5 py-5 text-center shadow-[0_16px_42px_rgba(37,99,235,.09)] backdrop-blur-sm transition duration-300 hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_24px_54px_rgba(37,99,235,.15)]">
                 <span className="relative grid h-[82px] w-[92px] place-items-center text-[#2563EB] transition duration-300 group-hover:scale-105">
                   <span className="absolute inset-x-1 bottom-1 h-14 rounded-[50%] bg-[radial-gradient(circle,#DBEAFE_0%,#EFF6FF_62%,transparent_64%)]" />
                   <Icon className="relative size-[68px] drop-shadow-[0_9px_10px_rgba(37,99,235,.14)]" weight="duotone" />
@@ -45,7 +48,7 @@ export function BenefitsSection() {
           })}
         </div>
 
-        <div className="mt-16 lg:mt-[72px]">
+        <div className="mt-14 lg:mt-16">
           <header className="text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#2563EB]">Cara kerja</p>
             <h2 className="mt-3 text-3xl font-bold tracking-[-0.045em] text-[#111827] sm:text-[36px]">Mudah dalam 3 Langkah</h2>

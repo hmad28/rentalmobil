@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, CalendarDays, CarFront, Check, CircleDollarSign, Clock3, CreditCard, MapPin, RotateCcw, Search } from "lucide-react";
+import { ArrowRight, CalendarDays, CarFront, Check, CircleDollarSign, Clock3, CreditCard, KeyRound, MapPin, RotateCcw, Search, ShieldCheck, UserRound } from "lucide-react";
 
 import { assetRoot, bookingUrl } from "./content";
 
@@ -17,6 +17,12 @@ const bookingBenefits = [
   { title: "Pembayaran aman", note: "Transaksi 100% aman", icon: CreditCard },
 ] as const;
 
+const servicePromos = [
+  { label: "Lepas Kunci", icon: KeyRound },
+  { label: "Dengan Sopir", icon: UserRound },
+  { label: "Antar Jemput", icon: CarFront },
+] as const;
+
 export function HeroSection() {
   return (
     <section className="relative bg-[#F8FAFC] text-white">
@@ -28,7 +34,7 @@ export function HeroSection() {
 
         <div className="site-container relative z-10 flex min-h-[790px] items-start pb-[205px] pt-[152px] sm:pt-[166px] lg:min-h-[800px] lg:items-center lg:pb-[175px] lg:pt-[120px]">
           <div className="max-w-[680px]">
-          <p className="hero-reveal hero-delay-1 mb-5 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#60A5FA]"><MapPin className="size-4" /> Bandung</p>
+          <p className="hero-reveal hero-delay-1 mb-5 inline-flex items-center gap-2 rounded-full border border-[#60A5FA]/30 bg-[#2563EB]/15 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#93C5FD] backdrop-blur-md"><ShieldCheck className="size-4" /> Rental terpercaya di Bandung</p>
           <h1 className="hero-reveal hero-delay-2 max-w-[680px] text-[43px] font-bold leading-[1.06] tracking-[-0.05em] text-balance sm:text-[56px] lg:text-[60px]">
             Sewa Kendaraan di <span className="text-[#3B82F6]">Bandung,</span><br />Lebih Mudah &amp; Nyaman
           </h1>
@@ -37,12 +43,21 @@ export function HeroSection() {
             <a href={bookingUrl()} target="_blank" rel="noreferrer" className="inline-flex h-12 items-center gap-2 rounded-lg bg-[#2563EB] px-6 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(37,99,235,.3)] transition hover:-translate-y-0.5 hover:bg-[#1D4ED8]">Pesan Sekarang <ArrowRight className="size-4" /></a>
             <a href="#armada" className="inline-flex h-12 items-center gap-2 rounded-lg border border-white/30 bg-white/5 px-6 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10">Lihat Armada <ArrowRight className="size-4" /></a>
           </div>
-          <div className="hero-reveal hero-delay-5 mt-8 flex flex-wrap gap-x-6 gap-y-3 text-xs font-medium text-slate-300">
-            {["Banyak pilihan unit", "Harga transparan", "Layanan profesional"].map((item) => <span key={item} className="flex items-center gap-2"><span className="grid size-5 place-items-center rounded-full border border-[#3B82F6] text-[#60A5FA]"><Check className="size-3" /></span>{item}</span>)}
+          <div className="hero-reveal hero-delay-5 mt-7 flex w-fit max-w-full flex-wrap items-stretch overflow-hidden rounded-2xl border border-white/12 bg-[#071A30]/78 shadow-[0_16px_42px_rgba(0,0,0,.28)] backdrop-blur-md">
+            <div className="min-w-[155px] border-b border-white/10 px-4 py-3 sm:border-b-0 sm:border-r">
+              <span className="block text-[10px] font-medium text-slate-400">Mulai dari</span>
+              <strong className="mt-0.5 block text-xl font-bold tracking-[-0.03em] text-white">Rp80.000<span className="ml-1 text-[10px] font-medium text-slate-400">/hari</span></strong>
+            </div>
+            {servicePromos.map(({ label, icon: Icon }) => (
+              <span key={label} className="flex min-w-[112px] items-center gap-2 border-l border-white/10 px-3.5 py-3 text-[10px] font-semibold text-slate-200">
+                <Icon className="size-4 text-[#60A5FA]" />{label}
+              </span>
+            ))}
           </div>
-          <div className="hero-reveal hero-delay-6 mt-5 flex items-center gap-4">
+          <div className="hero-reveal hero-delay-6 mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
             <div className="flex -space-x-2">{["RP", "DL", "AS", "NW"].map((initials) => <span key={initials} className="grid size-8 place-items-center rounded-full border-2 border-[#071321] bg-gradient-to-br from-[#DBEAFE] to-[#93C5FD] text-[8px] font-bold text-[#1D4ED8]">{initials}</span>)}</div>
             <p className="text-[11px] leading-4 text-slate-400"><strong className="block text-xs text-white">2.000+ pelanggan puas</strong>mempercayakan perjalanan mereka</p>
+            <span className="flex items-center gap-2 text-[11px] font-medium text-slate-300"><span className="grid size-5 place-items-center rounded-full border border-[#3B82F6] text-[#60A5FA]"><Check className="size-3" /></span>Harga transparan</span>
           </div>
           </div>
         </div>

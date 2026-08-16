@@ -1,11 +1,22 @@
 import Image from "next/image";
-import { ArrowRight, Gauge, MessageCircle, Snowflake, UsersRound } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, Gauge, Heart, MapPinned, MessageCircle, Plane, Snowflake, Star, UsersRound } from "lucide-react";
 
-import { bookingUrl, cars } from "./content";
+import { assetRoot, bookingUrl, cars } from "./content";
+
+const tripTypes = [
+  { title: "City Tour", note: "Jelajahi Bandung", icon: MapPinned },
+  { title: "Bandara & Stasiun", note: "Jemput tepat waktu", icon: Plane },
+  { title: "Wisata Keluarga", note: "Nyaman untuk semua", icon: Heart },
+  { title: "Perjalanan Bisnis", note: "Profesional & fleksibel", icon: BriefcaseBusiness },
+] as const;
+
+const promos = ["Best Seller", "Paling Populer", "Harga Hemat", "Favorit Keluarga", "Tersedia Hari Ini", "City Tour", "Bisnis", "Banyak Pilihan"] as const;
 
 export function CarFleetSection() {
   return (
     <section id="armada" className="relative overflow-hidden bg-[#F8FAFC] py-20 lg:py-28">
+      <Image src={`${assetRoot}/bandung-gedung-sate.jpg`} alt="" fill sizes="100vw" className="pointer-events-none object-cover object-top opacity-[0.13]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(248,250,252,.48)_0%,rgba(248,250,252,.94)_34%,#F8FAFC_100%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(37,99,235,.07),transparent_24%),radial-gradient(circle_at_88%_72%,rgba(59,130,246,.05),transparent_28%)]" />
       <div className="site-container relative">
         <div className="flex flex-col justify-between gap-7 md:flex-row md:items-end">
@@ -22,16 +33,26 @@ export function CarFleetSection() {
           <a href="#rental-motor" className="px-5 py-3 text-sm font-semibold text-[#64748B] transition hover:text-[#111827]">Motor</a>
         </div>
 
-        <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+        <div className="mt-6 grid gap-y-4 border-y border-[#D9E4F2] py-4 sm:grid-cols-2 lg:grid-cols-4">
+          {tripTypes.map(({ title, note, icon: Icon }, index) => (
+            <div key={title} className={`flex items-center gap-3 lg:px-5 ${index > 0 ? "lg:border-l lg:border-[#D9E4F2]" : "lg:pl-0"}`}>
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#EAF2FF] text-[#2563EB]"><Icon className="size-5" strokeWidth={1.8} /></span>
+              <span><strong className="block text-xs font-bold text-[#111827]">{title}</strong><span className="mt-0.5 block text-[10px] text-[#64748B]">{note}</span></span>
+            </div>
+          ))}
+        </div>
+
+        <div className="-mx-5 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-6 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 lg:gap-6">
           {cars.map((vehicle, index) => {
             const price = vehicle.selfDrivePrice;
             const secondaryPrice = vehicle.allInPrice;
             return (
-              <article key={`${vehicle.name}-${index}`} className="group flex min-h-[470px] flex-col overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white shadow-[0_10px_30px_rgba(15,23,42,.06)] transition duration-300 hover:-translate-y-1.5 hover:border-[#93C5FD] hover:shadow-[0_24px_55px_rgba(37,99,235,.14)]">
+              <article key={`${vehicle.name}-${index}`} className="group flex min-h-[490px] w-[82vw] max-w-[310px] shrink-0 snap-start flex-col overflow-hidden rounded-[20px] border border-white bg-white shadow-[0_14px_38px_rgba(15,23,42,.08)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_28px_64px_rgba(37,99,235,.17)] sm:w-auto sm:max-w-none">
                 <div className="relative aspect-[1.03] overflow-hidden bg-[radial-gradient(circle_at_50%_38%,#EFF6FF_0%,#DBEAFE_52%,#BFDBFE_100%)]">
                   <Image src={vehicle.image} alt={`${vehicle.name} DriveMate`} fill sizes="(min-width:1024px) 280px, (min-width:640px) 50vw, 100vw" className="object-cover hue-rotate-[212deg] saturate-[.92] transition-transform duration-500 group-hover:scale-[1.025]" />
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0F3E88]/20 to-transparent" />
-                  <span className="absolute right-3 top-3 rounded-lg border border-white/60 bg-white/85 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#16A34A] shadow-sm backdrop-blur">Available</span>
+                  <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-lg bg-[#2563EB] px-2.5 py-1.5 text-[9px] font-bold text-white shadow-[0_8px_20px_rgba(37,99,235,.28)]"><Star className="size-3 fill-current" />{promos[index]}</span>
+                  <span className="absolute right-3 top-3 rounded-lg border border-white/60 bg-white/90 px-2.5 py-1.5 text-[9px] font-bold uppercase tracking-[0.08em] text-[#16A34A] shadow-sm backdrop-blur">Tersedia</span>
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-[17px] font-bold tracking-[-0.025em] text-[#111827]">{vehicle.name}</h3>
@@ -41,10 +62,10 @@ export function CarFleetSection() {
                     <span className="flex items-center gap-1"><Snowflake className="size-3.5 text-[#2563EB]" />AC</span>
                   </div>
                   <div className="mt-5 flex items-end justify-between gap-3 border-t border-[#E2E8F0] pt-4">
-                    <div><span className="block text-[10px] text-[#94A3B8]">Mulai dari</span><strong className="text-[15px] font-bold text-[#0F172A] [font-variant-numeric:tabular-nums]">{price}</strong></div>
+                    <div><span className="block text-[10px] text-[#94A3B8]">Mulai dari</span><strong className="text-[18px] font-bold tracking-[-0.025em] text-[#2563EB] [font-variant-numeric:tabular-nums]">{price}</strong></div>
                     {secondaryPrice ? <span className="max-w-[92px] text-right text-[10px] leading-4 text-[#64748B]">All-in<br />{secondaryPrice}</span> : null}
                   </div>
-                  <a href={bookingUrl(vehicle.name)} target="_blank" rel="noreferrer" className="mt-5 flex h-11 items-center justify-center gap-2 rounded-xl border border-[#2563EB] bg-[#EFF6FF] text-xs font-semibold text-[#2563EB] transition hover:bg-[#2563EB] hover:text-white"><MessageCircle className="size-4" />Pesan Sekarang</a>
+                  <a href={bookingUrl(vehicle.name)} target="_blank" rel="noreferrer" className="mt-5 flex h-11 items-center justify-center gap-2 rounded-xl bg-[#2563EB] text-xs font-semibold text-white shadow-[0_10px_22px_rgba(37,99,235,.22)] transition hover:-translate-y-0.5 hover:bg-[#1D4ED8] hover:shadow-[0_14px_28px_rgba(37,99,235,.3)]"><MessageCircle className="size-4" />Pesan Sekarang</a>
                 </div>
               </article>
             );
